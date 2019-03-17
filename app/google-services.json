@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "382579566345",
+    "firebase_url": "https://energymonitor-2eb6a.firebaseio.com",
+    "project_id": "energymonitor-2eb6a",
+    "storage_bucket": "energymonitor-2eb6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382579566345:android:a519203fa85e1c5e",
+        "android_client_info": {
+          "package_name": "com.example.energymonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382579566345-u40vsb4blk0p6p0ttfrkrlqvk48skikm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.energymonitor",
+            "certificate_hash": "924a6e3de9fe06c0513fdde2c6742d77a2228067"
+          }
+        },
+        {
+          "client_id": "382579566345-ro5ip6rhsf950a5bf38faqsjc0dp2264.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeicG2mkQ4U594p5WGgsFQvDJH9D5fhDg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382579566345-ro5ip6rhsf950a5bf38faqsjc0dp2264.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
