@@ -42,35 +42,4 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="596dp" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="395dp"
-        android:layout_height="69dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="342dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/EmailId"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Email" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="395dp"
-        android:layout_height="66dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="431dp">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/SenhaId"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:baselineAligned="false"
-            android:hint="Senha" />
-    </android.support.design.widget.TextInputLayout>
-
 </android.support.constraint.ConstraintLayout>
