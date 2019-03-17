@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(MainActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(MainActivity.this, SignupActivity.class));
+                                        startActivity(new Intent(MainActivity.this, CadastroActivity.class));
                                         finish();
                                         progressBar.setVisibility(View.GONE);
                                     } else {
