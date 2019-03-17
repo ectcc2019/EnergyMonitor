@@ -10,68 +10,45 @@
 
     <Button
         android:id="@+id/botaoEntrarId"
-        android:layout_width="0dp"
+        android:layout_width="395dp"
         android:layout_height="66dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="2dp"
         android:text="Entrar"
-        app:layout_constraintBottom_toTopOf="@+id/botaoCadastroId"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="528dp" />
 
     <TextView
         android:id="@+id/botaoEsqSenhaId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
         android:text="Esqueceu a Senha?"
         android:textColor="@color/blue"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botaoCadastroId" />
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="666dp" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="275dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginBottom="61dp"
+        android:layout_height="251dp"
         android:src="@drawable/logotipo"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="71dp" />
 
     <Button
         android:id="@+id/botaoCadastroId"
-        android:layout_width="0dp"
+        android:layout_width="395dp"
         android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="14dp"
         android:text="Cadastre-se"
-        app:layout_constraintBottom_toTopOf="@+id/botaoEsqSenhaId"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botaoEntrarId" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="596dp" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="395dp"
         android:layout_height="69dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="342dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/EmailId"
@@ -84,12 +61,9 @@
         android:id="@+id/textInputLayout3"
         android:layout_width="395dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="11dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/botaoEntrarId"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="431dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/SenhaId"
