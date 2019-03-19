@@ -1,4 +1,6 @@
 package com.example.energymonitor;
 
-public class GastosActivity {
+import android.support.v7.app.AppCompatActivity;
+
+public class GastosActivity extends AppCompatActivity {
 }

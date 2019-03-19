@@ -21,6 +21,10 @@
         <activity android:name="com.example.energymonitor.MainActivity" />
         <activity android:name="com.example.energymonitor.CadastroActivity" />
         <activity android:name="com.example.energymonitor.ResetSenhaActivity" />
+        <activity android:name="com.example.energymonitor.MeuPerfilActivity" />
+        <activity android:name="com.example.energymonitor.GastosActivity" />
+        <activity android:name="com.example.energymonitor.MeuConsumoActivity" />
+        <activity android:name="com.example.energymonitor.AjustesActivity" />
     </application>
 
 </manifest>

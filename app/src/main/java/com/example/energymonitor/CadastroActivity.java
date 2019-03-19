@@ -23,7 +23,6 @@ public class CadastroActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +88,7 @@ public class CadastroActivity extends AppCompatActivity {
                                     Toast.makeText(CadastroActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(CadastroActivity.this, MainActivity.class));
+                                    startActivity(new Intent(CadastroActivity.this, MeuPerfilActivity.class));
                                     finish();
                                 }
                             }

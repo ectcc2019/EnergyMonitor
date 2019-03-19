@@ -1,4 +1,6 @@
 package com.example.energymonitor;
 
-public class AjustesActivity {
+import android.support.v7.app.AppCompatActivity;
+
+public class AjustesActivity extends AppCompatActivity {
 }
