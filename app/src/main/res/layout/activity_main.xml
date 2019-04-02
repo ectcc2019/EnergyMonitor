@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageConsumo"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -57,13 +57,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageConsumo" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageGastos"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="2dp"
         android:contentDescription=""
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/textGastos"
@@ -78,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="54dp"
         android:gravity="center"
         android:text="@string/gastos"
         android:textColor="@android:color/white"
@@ -88,7 +89,7 @@
         app:layout_constraintStart_toEndOf="@+id/textConsumo"
         app:layout_constraintTop_toBottomOf="@+id/imageGastos" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imagePerfil"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -99,7 +100,7 @@
         android:layout_marginRight="19dp"
         android:contentDescription=""
         android:src="@mipmap/ic_launcher"
-        app:layout_constraintBottom_toTopOf="@+id/textPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/imageAjuste"
         app:layout_constraintEnd_toStartOf="@+id/imageAjuste"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageAjuste"
@@ -111,6 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
         android:layout_marginLeft="37dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:gravity="center"
@@ -119,15 +121,16 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/textAjuste"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageAjuste" />
+        app:layout_constraintTop_toBottomOf="@+id/imagePerfil" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageAjuste"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="1dp"
         android:contentDescription=""
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/textAjuste"
@@ -142,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="126dp"
         android:gravity="center"
         android:text="@string/ajuste"
         android:textColor="@android:color/white"
@@ -151,18 +154,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textPerfil"
         app:layout_constraintTop_toBottomOf="@+id/imageAjuste" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center|bottom"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textSaudacao"
@@ -177,5 +168,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageConsumo"
         app:layout_constraintStart_toStartOf="@+id/imageConsumo"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
