@@ -35,4 +35,7 @@
     <string name="perfil">Meu Perfil</string>
     <string name="ajuste">Ajustes</string>
     <string name="number">Telefone</string>
+    <string name="name">Nome</string>
+    <string name="nascimento">Data de nascimento</string>
+    <string name="telefone">Celular</string>
 </resources>

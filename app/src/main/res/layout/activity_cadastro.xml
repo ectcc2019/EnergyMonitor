@@ -24,11 +24,19 @@
             android:layout_width="@dimen/logo_w_h"
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="60dp"
             android:contentDescription=""
             android:src="@mipmap/ic_launcher"
             tools:ignore="ContentDescription" />
 
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
 
         <EditText
             android:id="@+id/email"
@@ -49,6 +57,24 @@
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/datanascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nascimento"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefone"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColor="@android:color/white" />
 
@@ -93,7 +119,6 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center|bottom"
-        android:layout_marginBottom="20dp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
