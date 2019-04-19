@@ -7,87 +7,167 @@
     android:theme="@style/AppTheme"
     tools:context="com.example.energymonitor.MeuPerfilActivity">
 
+    <TextView
+        android:id="@+id/useremail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/name"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:hint="@string/email_id"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/old_email"
+        android:layout_marginTop="337dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/name"
+        android:hint="@string/name"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/old_email"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/name"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/datanascimento"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/old_email"
+        android:hint="@string/email"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
     <EditText
         android:id="@+id/old_email"
-        android:layout_width="368dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/datanascimento"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="82dp" />
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textnascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/telefone"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/datanascimento"
+        android:hint="@string/nascimento"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="400dp"
+        android:id="@+id/datanascimento"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/telefone"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toLeftOf="@+id/textname"
+        android:hint="@string/nascimento"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/texttelefone"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/newPassword"
-        android:layout_toEndOf="@+id/progressBar"
-        android:layout_toRightOf="@+id/progressBar"
-        android:focusableInTouchMode="true"
-        android:hint="@string/prompt_password"
-        android:imeActionId="@+id/login"
-        android:imeOptions="actionUnspecified"
-        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/telefone"
+        android:hint="@string/telefone"
         android:maxLines="1"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="125dp" />
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/telefone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newPassword"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/telefone"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textnewpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/change_password_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="55dp"
+        android:layout_toLeftOf="@id/newPassword"
+        android:hint="@string/hint_password"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/newPassword"
-        android:layout_width="400dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/changePass"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/change_password_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="10dp"
         android:focusableInTouchMode="true"
         android:hint="@string/new_pass"
         android:imeActionId="@+id/login"
         android:imeOptions="actionUnspecified"
         android:inputType="textPassword"
         android:maxLines="1"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="168dp" />
-
-    <Button
-        android:id="@+id/changePass"
-        style="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/remove"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/btn_change"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="211dp" />
+        tools:ignore="InvalidImeActionId" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <Button
-        android:id="@+id/remove"
-        style="?android:textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/change_password_button"
-        android:layout_alignStart="@+id/changePass"
-        android:layout_alignLeft="@+id/changePass"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/btn_remove"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="259dp" />
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/change_password_button"
@@ -97,10 +177,8 @@
         android:layout_above="@+id/remove_user_button"
         android:layout_alignStart="@+id/remove_user_button"
         android:layout_alignLeft="@+id/remove_user_button"
-        android:text="@string/change_password"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="312dp" />
+        android:text="@string/btn_change"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/remove_user_button"
@@ -111,9 +189,7 @@
         android:layout_alignStart="@+id/sign_out"
         android:layout_alignLeft="@+id/sign_out"
         android:text="@string/remove_user"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="408dp" />
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/sign_out"
@@ -125,20 +201,6 @@
         android:background="@color/colorPrimary"
         android:text="@string/btn_sign_out"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="456dp" />
-
-    <TextView
-        android:id="@+id/useremail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/old_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp"
-        android:gravity="center"
-        android:hint="@string/email_id"
-        android:textSize="30sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -25,7 +25,7 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private DatabaseReference databaseReference, databaseMedidor;
+    private DatabaseReference databaseReference, databaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,16 +96,19 @@ public class CadastroActivity extends AppCompatActivity {
                                     String name = inputName.getText().toString().trim();
                                     String datanascimento = inputDataNascimento.getText().toString().trim();
                                     String telefone = inputTelefone.getText().toString().trim();
+                                    String email = inputEmail.getText().toString().trim();
 
-                                    UserInformation userInformation = new UserInformation(name, datanascimento, telefone);
+                                    UserInformation userInformation = new UserInformation(name, datanascimento, telefone, email);
+                                    GastosInformation gastosInformation = new GastosInformation(0.17759, 0.25, 0.0097, 0.0451);
 
                                     FirebaseUser user = auth.getCurrentUser();
 
                                     databaseReference.child(user.getUid()).setValue(userInformation);
 
-                                    databaseMedidor = FirebaseDatabase.getInstance().getReference(user.getUid());
+                                    databaseUser = FirebaseDatabase.getInstance().getReference(user.getUid());
 
-                                    databaseMedidor.child("Leitura").setValue(1);
+                                    databaseUser.child("Leitura").setValue(1);
+                                    databaseUser.child("Gastos").setValue(gastosInformation);
 
 
                                     Toast.makeText(CadastroActivity.this, "Usuário criado com sucesso" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
@@ -119,7 +122,7 @@ public class CadastroActivity extends AppCompatActivity {
                                     Toast.makeText(CadastroActivity.this, "Falha na autenticação " + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(CadastroActivity.this, MeuPerfilActivity.class));
+                                    startActivity(new Intent(CadastroActivity.this, MainActivity.class));
                                     finish();
                                 }
                             }

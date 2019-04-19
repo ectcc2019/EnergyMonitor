@@ -7,7 +7,7 @@
     <string name="change_email">Change Email</string>
     <string name="change_password">Change Password</string>
     <string name="send_password_reset_email">Send Password reset email</string>
-    <string name="remove_user">Remover usuário</string>
+    <string name="remove_user">Apagar conta</string>
     <string name="new_pass">Nova senha</string>
     <string name="title_activity_profile">Firebase</string>
     <string name="title_activity_login">Cadastre-se</string>
@@ -23,10 +23,10 @@
     <string name="btn_reset_password">Reset Password</string>
     <string name="btn_back"><![CDATA[<< Back]]></string>
     <string name="hint_new_email">New Email</string>
-    <string name="btn_change">Change</string>
+    <string name="btn_change">Salvar alterações</string>
     <string name="btn_send">Send</string>
-    <string name="btn_remove">Remove</string>
-    <string name="btn_sign_out">Sign Out</string>
+    <string name="btn_remove">Remover</string>
+    <string name="btn_sign_out">Sair</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="email_id">Email ID</string>
@@ -34,8 +34,13 @@
     <string name="gastos">Gastos</string>
     <string name="perfil">Meu Perfil</string>
     <string name="ajuste">Ajustes</string>
-    <string name="number">Telefone</string>
+    <string name="telefone">Telefone</string>
     <string name="name">Nome</string>
-    <string name="nascimento">Data de nascimento</string>
-    <string name="telefone">Celular</string>
+    <string name="nascimento">Nascimento</string>
+    <string name="kwh">R$/kWh</string>
+    <string name="icms">ICMS</string>
+    <string name="pis">PIS</string>
+    <string name="cofins">COFINS</string>
+    <string name="precokwh">Preço por Kwh</string>
+    <string name="impostos">Impostos</string>
 </resources>

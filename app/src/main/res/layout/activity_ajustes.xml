@@ -1,6 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
+    tools:context="com.example.energymonitor.MeuPerfilActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textopreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editpreco"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:hint="@string/precokwh"
+        android:textSize="30sp"
+        android:textColorHint="@android:color/white"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textkwh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textimpostos"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/old_email"
+        android:hint="@string/kwh"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/editpreco"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textimpostos"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="50dp"
+        android:hint="@string/kwh"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textimpostos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editicms"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:hint="@string/impostos"
+        android:textSize="30sp"
+        android:textColorHint="@android:color/white"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/texticms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editpis"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/datanascimento"
+        android:hint="@string/icms"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/editicms"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editpis"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toLeftOf="@+id/textname"
+        android:hint="@string/icms"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textpis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editcofins"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@id/telefone"
+        android:hint="@string/pis"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/editpis"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editcofins"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/pis"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textcofins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_ajuste_salvar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="55dp"
+        android:layout_toLeftOf="@id/newPassword"
+        android:hint="@string/cofins"
+        android:maxLines="1"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/editcofins"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_ajuste_salvar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="10dp"
+        android:focusableInTouchMode="true"
+        android:hint="@string/cofins"
+        android:imeActionId="@+id/login"
+        android:imeOptions="actionUnspecified"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        tools:ignore="InvalidImeActionId" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_ajuste_salvar"
+        style="?android:textAppearanceSmall"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/btn_change"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="70dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -16,30 +16,32 @@
         android:layout_marginBottom="57dp"
         android:gravity="center"
         android:hint="@string/email_id"
+        android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/imageGastos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <ImageButton
         android:id="@+id/imageConsumo"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="37dp"
         android:layout_marginLeft="37dp"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:layout_marginBottom="397dp"
-        android:contentDescription=""
-        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/consumo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageGastos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textSaudacao"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/useremail"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textConsumo"
@@ -62,16 +64,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginBottom="2dp"
-        android:contentDescription=""
-        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/gastos"
         app:layout_constraintBottom_toTopOf="@+id/textGastos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageConsumo"
-        app:layout_constraintTop_toBottomOf="@+id/useremail"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/useremail" />
 
     <TextView
         android:id="@+id/textGastos"
@@ -98,13 +98,12 @@
         android:layout_marginLeft="37dp"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
-        android:contentDescription=""
-        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/perfile"
         app:layout_constraintBottom_toBottomOf="@+id/imageAjuste"
         app:layout_constraintEnd_toStartOf="@+id/imageAjuste"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageAjuste"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toTopOf="@+id/imageAjuste" />
 
     <TextView
         android:id="@+id/textPerfil"
@@ -132,7 +131,8 @@
         android:layout_marginRight="35dp"
         android:layout_marginBottom="1dp"
         android:contentDescription=""
-        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ajustes"
         app:layout_constraintBottom_toTopOf="@+id/textAjuste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagePerfil"
@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginBottom="126dp"
+        android:layout_marginBottom="124dp"
         android:gravity="center"
         android:text="@string/ajuste"
         android:textColor="@android:color/white"
@@ -154,20 +154,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textPerfil"
         app:layout_constraintTop_toBottomOf="@+id/imageAjuste" />
-
-    <TextView
-        android:id="@+id/textSaudacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginBottom="57dp"
-        android:text="Olá,"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageConsumo"
-        app:layout_constraintEnd_toEndOf="@+id/imageConsumo"
-        app:layout_constraintStart_toStartOf="@+id/imageConsumo"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </android.support.constraint.ConstraintLayout>

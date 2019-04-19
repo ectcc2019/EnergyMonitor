@@ -58,7 +58,8 @@
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            tools:ignore="InvalidImeActionId" />
 
         <EditText
             android:id="@+id/datanascimento"
