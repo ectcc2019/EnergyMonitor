@@ -80,14 +80,14 @@ public class MeuConsumoActivity extends AppCompatActivity {
         graphDay.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
 
         series.setTitle("Real"); //define o titulo da serie
-        series.setColor(Color.CYAN); // define a cor da serie
+        series.setColor(Color.GREEN); // define a cor da serie
         series.setDrawDataPoints(true); //marcador dos pontos
         //series.setColor(Color.BLACK); //cor do marcador
         series.setDrawBackground(true); //inserir fundo
         series.setBackgroundColor(Color.CYAN); // pintar fundo
 
         seriesAC.setTitle("Acumulado");
-        seriesAC.setColor(Color.MAGENTA);
+        seriesAC.setColor(Color.RED);
         //seriesAC.setDrawBackground(true);
         //seriesAC.setBackgroundColor(Color.GREEN);
 
