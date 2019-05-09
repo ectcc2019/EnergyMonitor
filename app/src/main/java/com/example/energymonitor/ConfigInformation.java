@@ -1,17 +1,17 @@
 package com.example.energymonitor;
 
-public class GastosInformation {
-    
+public class ConfigInformation {
+
     public Double preco;
     public Double icms;
     public Double pis;
     public Double cofins;
-    
-    public  GastosInformation() {
-        
+
+    public  ConfigInformation() {
+
     }
 
-    public GastosInformation(Double preco, Double icms, Double pis, Double cofins) {
+    public ConfigInformation(Double preco, Double icms, Double pis, Double cofins) {
         this.preco = preco;
         this.icms = icms;
         this.pis = pis;

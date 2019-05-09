@@ -25,17 +25,19 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private DatabaseReference databaseReference, databaseUser;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
+        getSupportActionBar().setTitle("Cadastro");
+
         //Inicializando firebase auth objeto
         auth = FirebaseAuth.getInstance();
         //FirebaseUser user = auth.getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("usuarios");
 
 
         btnSignIn = (Button) findViewById(R.id.sign_in_button);
@@ -99,25 +101,18 @@ public class CadastroActivity extends AppCompatActivity {
                                     String email = inputEmail.getText().toString().trim();
 
                                     UserInformation userInformation = new UserInformation(name, datanascimento, telefone, email);
-                                    GastosInformation gastosInformation = new GastosInformation(0.17759, 0.25, 0.0097, 0.0451);
+                                    ConfigInformation configInformation = new ConfigInformation(0.17759, 0.25, 0.0097, 0.0451);
 
                                     FirebaseUser user = auth.getCurrentUser();
 
                                     databaseReference.child(user.getUid()).setValue(userInformation);
-
-                                    databaseUser = FirebaseDatabase.getInstance().getReference(user.getUid());
-
-                                    databaseUser.child("Leitura").setValue(1);
-                                    databaseUser.child("Gastos").setValue(gastosInformation);
-
+                                    databaseReference.child(user.getUid()).child("configuracoes").setValue(configInformation);
 
                                     Toast.makeText(CadastroActivity.this, "Usuário criado com sucesso" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                 }
-                                //Toast.makeText(CadastroActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+
                                 progressBar.setVisibility(View.GONE);
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
+
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(CadastroActivity.this, "Falha na autenticação " + task.getException(),
                                             Toast.LENGTH_SHORT).show();

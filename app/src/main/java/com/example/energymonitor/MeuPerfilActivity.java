@@ -36,10 +36,13 @@ public class MeuPerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meuperfil);
 
+        getSupportActionBar().setTitle("Meu Perfil");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        final DatabaseReference dadosperfil = firebaseDatabase.getReference(auth.getUid());
+        final DatabaseReference dadosperfil = firebaseDatabase.getReference().child("usuarios").child(auth.getUid());
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -77,6 +80,7 @@ public class MeuPerfilActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
+                assert userInformation != null;
                 editname.setText(userInformation.getName());
                 editnascimento.setText(userInformation.getDatanascimento());
                 edittelefone.setText(userInformation.getTelefone());
@@ -177,8 +181,6 @@ public class MeuPerfilActivity extends AppCompatActivity {
 
             }
         }
-
-
     };
 
     public void updateProfile() {

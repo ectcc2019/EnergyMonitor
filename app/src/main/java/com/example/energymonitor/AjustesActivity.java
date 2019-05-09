@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AjustesActivity extends AppCompatActivity {
 
-    private EditText precokwh, icms, cofins, pis;
+    private EditText precokwh, icms, cofins, pis, serie;
     private Button btnsalvar;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -30,10 +30,12 @@ public class AjustesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
+        getSupportActionBar().setTitle("Ajustes");
+
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference dadosperfil = firebaseDatabase.getReference(auth.getUid()).child("Gastos");
+        final DatabaseReference dadosperfil = firebaseDatabase.getReference().child("usuarios").child(auth.getUid()).child("configuracoes");
 
         precokwh = findViewById(R.id.editpreco);
         icms = findViewById(R.id.editicms);
@@ -50,14 +52,12 @@ public class AjustesActivity extends AppCompatActivity {
         dadosperfil.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                GastosInformation gastosInformation = dataSnapshot.getValue(GastosInformation.class);
+                ConfigInformation configInformation = dataSnapshot.getValue(ConfigInformation.class);
 
-                //DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols());
-
-                precokwh.setText(Double.toString(gastosInformation.getpreco()));
-                icms.setText(Double.toString(gastosInformation.getIcms()));
-                cofins.setText(Double.toString(gastosInformation.getCofins()));
-                pis.setText(Double.toString(gastosInformation.getPis()));
+                precokwh.setText(configInformation.getpreco().toString());
+                icms.setText(String.format("%.2f", configInformation.getIcms()* 100));
+                cofins.setText(String.format("%.2f", configInformation.getCofins()* 100));
+                pis.setText(String.format("%.2f", configInformation.getPis()* 100));
             }
 
             @Override
@@ -77,13 +77,11 @@ public class AjustesActivity extends AppCompatActivity {
                 double cofins_update = Double.parseDouble(cofins.getText().toString().trim());
                 double pis_update = Double.parseDouble(pis.getText().toString().trim());
 
-                GastosInformation gastosInformation = new GastosInformation(kwh_update, icms_update, pis_update, cofins_update);
+                ConfigInformation configInformation = new ConfigInformation(kwh_update, icms_update/100, pis_update/100, cofins_update/100);
 
-                DatabaseReference dadosperfil = firebaseDatabase.getReference(auth.getUid());
+                dadosperfil.setValue(configInformation);
 
-                dadosperfil.child("Gastos").setValue(gastosInformation);
-
-                Toast.makeText(AjustesActivity.this, "Atualizado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AjustesActivity.this, "Configurações atualizadas!", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
         });

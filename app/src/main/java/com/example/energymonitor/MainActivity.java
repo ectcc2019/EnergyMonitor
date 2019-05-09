@@ -28,11 +28,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton menuConsumo, menuGastos, menuPerfil, menuAjuste;
+    private ImageButton menuConsumo, menuGastos, menuPerfil, menuAjuste, imagePower, imagePoweroff;
     private TextView user;
     private FirebaseAuth auth;
     private DatabaseReference dadosperfil;
     private FirebaseDatabase firebaseDatabase;
+    private int stats = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +42,34 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        dadosperfil = firebaseDatabase.getReference(auth.getUid());
+        dadosperfil = firebaseDatabase.getReference().child("usuarios").child(auth.getUid());
 
-        user = findViewById(R.id.useremail);
+
         menuAjuste =  findViewById(R.id.imageAjuste);
         menuConsumo = findViewById(R.id.imageConsumo);
         menuPerfil = findViewById(R.id.imagePerfil);
         menuGastos = findViewById(R.id.imageGastos);
+        imagePower = findViewById(R.id.imagePower);
+        imagePoweroff = findViewById(R.id.imagePowerOff);
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+        };
 
         dadosperfil.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
+                user = findViewById(R.id.useremail);
                 user.setText("Olá, " + userInformation.getName());
             }
 
@@ -90,6 +107,63 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        imagePower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference leitura = firebaseDatabase.getReference().child("medidores").child("configuracao");
+
+                if (stats == 1) {
+                    imagePower.setVisibility(View.GONE);
+                    imagePoweroff.setVisibility(View.VISIBLE);
+                    leitura.child("status").setValue(0);
+                    stats = 0;
+                } else {
+                    imagePower.setVisibility(View.VISIBLE);
+                    imagePoweroff.setVisibility(View.GONE);
+                    leitura.child("status").setValue(1);
+                    stats = 1;
+                }
+            }
+        });
+
+        imagePoweroff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference leitura = firebaseDatabase.getReference().child("medidores").child("configuracao");
+
+                if (stats == 1) {
+                    imagePower.setVisibility(View.GONE);
+                    imagePoweroff.setVisibility(View.VISIBLE);
+                    leitura.child("status").setValue(0);
+                    stats = 0;
+                } else {
+                    imagePower.setVisibility(View.VISIBLE);
+                    imagePoweroff.setVisibility(View.GONE);
+                    leitura.child("status").setValue(1);
+                    stats = 1;
+                }
+            }
+        });
+
     }
+
+    // this listener will be called when there is change in firebase user session
+    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+        @SuppressLint("SetTextI18n")
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
+            } else {
+
+                //setDataToView(editname.getText());
+
+            }
+        }
+    };
 
 }
